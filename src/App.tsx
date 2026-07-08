@@ -12,6 +12,7 @@ import { Profile } from './pages/Profile';
 import { Classroom } from './pages/Classroom';
 import { University } from './pages/University';
 import { Pricing } from './pages/Pricing';
+import { Catalog } from './pages/Catalog';
 import { Admin } from './pages/Admin';
 import { UniAdmin } from './pages/UniAdmin';
 
@@ -33,6 +34,7 @@ export default function App() {
               <Route path="/courses" element={<CourseCatalog />} />
               <Route path="/university" element={<University />} />
               <Route path="/pricing" element={<Pricing />} />
+              <Route path="/catalog" element={<Catalog />} />
               <Route
                 path="/admin"
                 element={

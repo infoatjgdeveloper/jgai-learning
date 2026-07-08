@@ -11,10 +11,15 @@
   --color-edge-2: #c9d6e6;
   --color-fog: #5b6b81;
   --color-snow: #0e1a2b;
-  --color-jgai: #1d5fd6;
-  --color-jgai-bright: #1a4fb8;
+  --color-jgai: #2b6cff;
+  --color-jgai-bright: #1e56d6;
   --color-jgai-deep: #123a8c;
-  --color-jgai-sky: #e8f0fe;
+  --color-jgai-sky: #e9f0ff;
+  --color-pop-orange: #ff7a1a;
+  --color-pop-green: #10b981;
+  --color-pop-purple: #8b5cf6;
+  --color-pop-pink: #ec4899;
+  --color-pop-yellow: #f5b40a;
   --color-cyan-glow: #0e7490;
   --color-warm-off-white: #f6f9fd;
   --color-olive-accent: #1d5fd6;
@@ -40,14 +45,14 @@ h1, h2, h3, .display { font-family: var(--font-display); letter-spacing: -0.02em
 }
 
 .olive-button {
-  background: linear-gradient(135deg, #1d5fd6 0%, #123a8c 100%);
+  background: linear-gradient(135deg, #2b6cff 0%, #7c3aed 100%);
   color: white;
   border-radius: 10px;
   padding: 12px 24px;
   font-weight: 600;
   font-family: var(--font-sans);
   transition: filter 0.2s, transform 0.15s;
-  box-shadow: 0 6px 18px rgba(29, 95, 214, 0.25);
+  box-shadow: 0 6px 20px rgba(43, 108, 255, 0.3);
 }
 .olive-button:hover { filter: brightness(1.1); }
 .olive-button:active { transform: scale(0.98); }
@@ -90,7 +95,7 @@ h1, h2, h3, .display { font-family: var(--font-display); letter-spacing: -0.02em
 }
 
 .glow-text {
-  background: linear-gradient(135deg, #1d5fd6 0%, #0e7490 100%);
+  background: linear-gradient(120deg, #2b6cff 0%, #8b5cf6 55%, #ec4899 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

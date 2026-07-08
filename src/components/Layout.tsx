@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../AuthContext';
-import { LayoutDashboard, LogOut, User, School, Sparkles, ShieldCheck, Building2, CreditCard } from 'lucide-react';
+import { LayoutDashboard, LogOut, User, School, Sparkles, ShieldCheck, Building2, CreditCard, BookOpen } from 'lucide-react';
 
 const SUPER_ADMINS = ['infoatjgdeveloper@gmail.com'];
 
@@ -46,6 +46,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           </Link>
 
           <nav className="hidden md:flex items-center gap-1 font-medium">
+            {navLink('/catalog', <BookOpen size={15} />, 'Catalog')}
             {!profile && navLink('/pricing', <CreditCard size={15} />, 'Pricing')}
             {navLink('/university', <Sparkles size={15} />, 'JGAI University')}
             {profile && (
