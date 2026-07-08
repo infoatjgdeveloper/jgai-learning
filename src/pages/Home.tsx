@@ -31,7 +31,7 @@ const TESTIMONIALS = [
 
 const FAQS = [
   ['What exactly are credit hours?', 'The same unit real universities use (the Carnegie unit): 1 credit hour ≈ 15 hours of instruction. A typical course is 3 credit hours; an MBA-style track is ~36. Your tuition is charged per credit hour — 25 JGAI credits each.'],
-  ['Is this accredited? What is the certificate worth?', 'JGAI certificates are professional certificates issued by JGAI with verifiable IDs and full transcripts, similar to Coursera or Google certificates. JGAI is not a government-accredited degree-granting institution — we are transparent about that.'],
+  ['Is this accredited? What is the certificate worth?', 'JGAI certificates are professional certificates issued by JGAI with verifiable IDs and full transcripts, similar to leading professional certificate programs. JGAI is not a government-accredited degree-granting institution — we are transparent about that.'],
   ['How does the Canvas sync work?', 'You generate a personal access token in your school Canvas account (Account → Settings → New access token) and connect it. Your courses, assignments and due dates sync in. The token stays in your browser — we never store it.'],
   ['Can the AI just do my homework?', "No. In Classroom mode the AI explains, plans and teaches — it is designed to respect your school's academic integrity policies. In JGAI University programs, the AI is your professor and does grade your work."],
   ['What if my subject is not in the catalog?', 'Type anything into enrollment — from "Quantum Computing" to "Sourdough Baking Business". The AI registrar designs a rigorous program for it and prices it in credit hours.'],
@@ -50,7 +50,7 @@ export function Home() {
       {/* HERO */}
       <section className="relative grid grid-cols-1 lg:grid-cols-2 gap-10 items-center pt-8">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="space-y-6">
-          <div className="tag"><Sparkles size={13} /> Udemy + Coursera + Canvas — in one AI campus</div>
+          <div className="tag"><Sparkles size={13} /> Marketplace + degrees + your school — one AI campus</div>
           <h1 className="text-5xl md:text-6xl font-bold leading-[1.05]">
             The university that <span className="glow-text">builds itself around you</span>.
           </h1>
@@ -156,7 +156,7 @@ export function Home() {
         <div className="text-center space-y-3">
           <div className="tag mx-auto">Why JGAI</div>
           <h2 className="text-4xl font-bold">Four platforms. <span className="glow-text">One campus.</span></h2>
-          <p className="text-fog max-w-xl mx-auto text-sm">Everything you'd get from a course marketplace, a MOOC, and your school's LMS — unified and AI-native.</p>
+          <p className="text-fog max-w-xl mx-auto text-sm">Everything a course marketplace, an online-degree platform and a campus LMS do — unified and AI-native.</p>
         </div>
         <div className="panel overflow-x-auto">
           <table className="w-full text-[13.5px] min-w-[640px]">
@@ -164,9 +164,9 @@ export function Home() {
               <tr className="border-b border-edge">
                 <th className="text-left px-5 py-4 font-semibold text-fog text-[12px] uppercase tracking-wider">Capability</th>
                 <th className="px-4 py-4"><span className="tag !text-[10px]">JGAI</span></th>
-                <th className="px-4 py-4 font-semibold text-fog">Udemy</th>
-                <th className="px-4 py-4 font-semibold text-fog">Coursera</th>
-                <th className="px-4 py-4 font-semibold text-fog">Canvas/Bb</th>
+                <th className="px-4 py-4 font-semibold text-fog">Course marketplaces</th>
+                <th className="px-4 py-4 font-semibold text-fog">MOOC platforms</th>
+                <th className="px-4 py-4 font-semibold text-fog">Campus LMS</th>
               </tr>
             </thead>
             <tbody>
