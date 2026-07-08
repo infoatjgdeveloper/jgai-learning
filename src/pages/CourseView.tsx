@@ -86,14 +86,14 @@ export function CourseView() {
           <div className="space-y-8">
             <div className="card space-y-6">
               <h2 className="text-3xl font-bold italic">Course Overview</h2>
-              <p className="text-gray-600 leading-relaxed">{course.description}</p>
+              <p className="text-fog leading-relaxed">{course.description}</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6">
-                <div className="p-4 bg-gray-50 rounded-2xl border border-gray-100">
-                  <p className="text-[10px] uppercase font-bold text-gray-400 tracking-widest mb-1">Instructor</p>
+                <div className="p-4 bg-panel-2 rounded-2xl border border-edge">
+                  <p className="text-[10px] uppercase font-bold text-fog tracking-widest mb-1">Instructor</p>
                   <p className="font-bold">{course.instructorName}</p>
                 </div>
-                <div className="p-4 bg-gray-50 rounded-2xl border border-gray-100">
-                  <p className="text-[10px] uppercase font-bold text-gray-400 tracking-widest mb-1">
+                <div className="p-4 bg-panel-2 rounded-2xl border border-edge">
+                  <p className="text-[10px] uppercase font-bold text-fog tracking-widest mb-1">
                     {isInstitutional ? 'Term' : 'Price'}
                   </p>
                   <p className="font-bold">
@@ -104,7 +104,7 @@ export function CourseView() {
             </div>
             
             <div className="space-y-4">
-              <h3 className="text-lg font-bold uppercase tracking-widest text-gray-400">Recent Announcements</h3>
+              <h3 className="text-lg font-bold uppercase tracking-widest text-fog">Recent Announcements</h3>
               {announcements.slice(0, 2).map(ann => (
                 <div key={ann.id} className="card p-6 flex gap-4">
                   <div className="w-10 h-10 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
@@ -112,7 +112,7 @@ export function CourseView() {
                   </div>
                   <div>
                     <h4 className="font-bold">{ann.title}</h4>
-                    <p className="text-xs text-gray-400 mt-1">{format(new Date(ann.createdAt), 'MMM d, yyyy')}</p>
+                    <p className="text-xs text-fog mt-1">{format(new Date(ann.createdAt), 'MMM d, yyyy')}</p>
                   </div>
                 </div>
               ))}
@@ -126,9 +126,9 @@ export function CourseView() {
               <div key={ann.id} className="card p-8 space-y-4">
                 <div className="flex justify-between items-start">
                   <h3 className="text-2xl font-bold italic">{ann.title}</h3>
-                  <span className="text-xs text-gray-400">{format(new Date(ann.createdAt), 'MMM d, yyyy h:mm a')}</span>
+                  <span className="text-xs text-fog">{format(new Date(ann.createdAt), 'MMM d, yyyy h:mm a')}</span>
                 </div>
-                <div className="prose prose-stone max-w-none text-gray-600">
+                <div className="prose prose-stone max-w-none text-fog">
                   <ReactMarkdown>{ann.content}</ReactMarkdown>
                 </div>
               </div>
@@ -146,11 +146,11 @@ export function CourseView() {
                   </div>
                   <div>
                     <h4 className="text-xl font-bold italic">{ass.title}</h4>
-                    <p className="text-xs text-gray-400 mt-1">Due: {format(new Date(ass.dueDate), 'MMM d, yyyy h:mm a')}</p>
+                    <p className="text-xs text-fog mt-1">Due: {format(new Date(ass.dueDate), 'MMM d, yyyy h:mm a')}</p>
                   </div>
                 </div>
                 <div className="text-right">
-                  <p className="text-sm font-bold text-gray-900">{ass.points} pts</p>
+                  <p className="text-sm font-bold text-snow">{ass.points} pts</p>
                   <button className={`text-xs font-bold uppercase tracking-widest text-${themeColor} mt-2 group-hover:underline`}>Submit</button>
                 </div>
               </div>
@@ -161,9 +161,9 @@ export function CourseView() {
         return (
           <div className="space-y-4">
             {lessons.map(lesson => (
-              <div key={lesson.id} className="card p-6 flex justify-between items-center group hover:bg-gray-50 transition-colors cursor-pointer" onClick={() => { setActiveTab('modules'); setCurrentLesson(lesson); }}>
+              <div key={lesson.id} className="card p-6 flex justify-between items-center group hover:bg-panel-2 transition-colors cursor-pointer" onClick={() => { setActiveTab('modules'); setCurrentLesson(lesson); }}>
                 <div className="flex gap-4 items-center">
-                  <div className="w-10 h-10 bg-gray-100 text-gray-400 rounded-full flex items-center justify-center font-bold">
+                  <div className="w-10 h-10 bg-gray-100 text-fog rounded-full flex items-center justify-center font-bold">
                     {lesson.order}
                   </div>
                   <h4 className="text-lg font-bold italic">{lesson.title}</h4>
@@ -181,13 +181,13 @@ export function CourseView() {
   return (
     <div className="space-y-8">
       {/* Course Header */}
-      <header className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 pb-8 border-b border-gray-100">
+      <header className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 pb-8 border-b border-edge">
         <div className="space-y-2">
-          <Link to="/dashboard" className={`inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-${themeColor} transition-colors mb-4`}>
+          <Link to="/dashboard" className={`inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-fog hover:text-${themeColor} transition-colors mb-4`}>
             <ArrowLeft size={14} /> Dashboard
           </Link>
           <h1 className="text-5xl font-bold italic leading-tight">{course.title}</h1>
-          <p className="text-gray-500 sans font-medium tracking-wide uppercase text-xs">
+          <p className="text-fog sans font-medium tracking-wide uppercase text-xs">
             {course.courseCode} &bull; {course.instructorName} &bull; {course.term}
           </p>
         </div>
@@ -209,7 +209,7 @@ export function CourseView() {
               className={`flex items-center gap-4 px-6 py-4 rounded-2xl text-sm font-bold uppercase tracking-widest transition-all ${
                 activeTab === tab.id && !currentLesson
                   ? `bg-${themeColor} text-white shadow-lg shadow-${themeColor}/20`
-                  : `text-gray-400 hover:bg-white hover:text-${themeColor}`
+                  : `text-fog hover:bg-panel hover:text-${themeColor}`
               }`}
             >
               <tab.icon size={18} />
@@ -232,7 +232,7 @@ export function CourseView() {
                 <div className="flex justify-between items-center">
                   <button 
                     onClick={() => setCurrentLesson(null)}
-                    className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-olive-accent flex items-center gap-2"
+                    className="text-xs font-bold uppercase tracking-widest text-fog hover:text-jgai-bright flex items-center gap-2"
                   >
                     <ArrowLeft size={14} /> Back to Modules
                   </button>

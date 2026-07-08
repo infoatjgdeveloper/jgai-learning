@@ -66,7 +66,7 @@ export function Profile() {
         </div>
         <div className="space-y-2">
           <h1 className="text-5xl font-bold italic">{profile.displayName}</h1>
-          <div className="flex items-center gap-4 text-gray-500">
+          <div className="flex items-center gap-4 text-fog">
             <span className="flex items-center gap-1"><Mail size={16} /> {profile.email}</span>
             <span className="flex items-center gap-1 uppercase tracking-widest text-[10px] font-bold bg-gray-100 px-2 py-1 rounded">{profile.role}</span>
           </div>
@@ -76,20 +76,20 @@ export function Profile() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
         <div className="md:col-span-2 space-y-8">
           <div className="card space-y-6">
-            <h2 className="text-xl font-bold uppercase tracking-widest text-gray-400 flex items-center gap-2">
+            <h2 className="text-xl font-bold uppercase tracking-widest text-fog flex items-center gap-2">
               <User size={20} /> About Me
             </h2>
             <textarea
               value={bio}
               onChange={(e) => setBio(e.target.value)}
               placeholder="Tell us about yourself..."
-              className="w-full h-40 p-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-2 focus:ring-olive-accent outline-none transition-all resize-none"
+              className="w-full h-40 p-4 bg-panel-2 border border-edge rounded-2xl focus:ring-2 focus:ring-olive-accent outline-none transition-all resize-none"
             />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="card space-y-6">
-              <h2 className="text-xl font-bold uppercase tracking-widest text-gray-400 flex items-center gap-2">
+              <h2 className="text-xl font-bold uppercase tracking-widest text-fog flex items-center gap-2">
                 <Briefcase size={20} /> Skills
               </h2>
               <input
@@ -97,12 +97,12 @@ export function Profile() {
                 value={skills}
                 onChange={(e) => setSkills(e.target.value)}
                 placeholder="React, Python, Design..."
-                className="w-full p-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-2 focus:ring-olive-accent outline-none transition-all"
+                className="w-full p-4 bg-panel-2 border border-edge rounded-2xl focus:ring-2 focus:ring-olive-accent outline-none transition-all"
               />
-              <p className="text-[10px] text-gray-400 uppercase font-bold">Separate with commas</p>
+              <p className="text-[10px] text-fog uppercase font-bold">Separate with commas</p>
             </div>
             <div className="card space-y-6">
-              <h2 className="text-xl font-bold uppercase tracking-widest text-gray-400 flex items-center gap-2">
+              <h2 className="text-xl font-bold uppercase tracking-widest text-fog flex items-center gap-2">
                 <Heart size={20} /> Interests
               </h2>
               <input
@@ -110,9 +110,9 @@ export function Profile() {
                 value={interests}
                 onChange={(e) => setInterests(e.target.value)}
                 placeholder="AI, History, Music..."
-                className="w-full p-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-2 focus:ring-olive-accent outline-none transition-all"
+                className="w-full p-4 bg-panel-2 border border-edge rounded-2xl focus:ring-2 focus:ring-olive-accent outline-none transition-all"
               />
-              <p className="text-[10px] text-gray-400 uppercase font-bold">Separate with commas</p>
+              <p className="text-[10px] text-fog uppercase font-bold">Separate with commas</p>
             </div>
           </div>
 
@@ -127,34 +127,34 @@ export function Profile() {
         </div>
 
         <div className="space-y-8">
-          <h2 className="text-xl font-bold uppercase tracking-widest text-gray-400">Institutional Info</h2>
+          <h2 className="text-xl font-bold uppercase tracking-widest text-fog">Institutional Info</h2>
           <div className="card space-y-4">
             <div className="flex items-center gap-4">
-              <div className="w-10 h-10 bg-olive-accent/10 text-olive-accent rounded-full flex items-center justify-center">
+              <div className="w-10 h-10 bg-jgai/10 text-jgai-bright rounded-full flex items-center justify-center">
                 <GraduationCap size={20} />
               </div>
               <div>
-                <p className="text-xs text-gray-400 uppercase font-bold">University ID</p>
+                <p className="text-xs text-fog uppercase font-bold">University ID</p>
                 <p className="font-bold">{profile.universityId}</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <div className="w-10 h-10 bg-gray-100 text-gray-400 rounded-full flex items-center justify-center">
+              <div className="w-10 h-10 bg-gray-100 text-fog rounded-full flex items-center justify-center">
                 <User size={20} />
               </div>
               <div>
-                <p className="text-xs text-gray-400 uppercase font-bold">Joined</p>
+                <p className="text-xs text-fog uppercase font-bold">Joined</p>
                 <p className="font-bold">{new Date(profile.createdAt).toLocaleDateString()}</p>
               </div>
             </div>
           </div>
 
-          <div className="pt-8 border-t border-gray-100 space-y-4">
+          <div className="pt-8 border-t border-edge space-y-4">
             {isAdmin && (
               <button
                 onClick={handleSeed}
                 disabled={isSeeding}
-                className="w-full p-4 bg-olive-accent text-white rounded-2xl font-bold uppercase tracking-widest text-xs hover:opacity-90 transition-all disabled:opacity-50"
+                className="w-full p-4 bg-jgai text-white rounded-2xl font-bold uppercase tracking-widest text-xs hover:opacity-90 transition-all disabled:opacity-50"
               >
                 {isSeeding ? 'Seeding...' : 'Seed Sample Data'}
               </button>

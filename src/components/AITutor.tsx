@@ -82,26 +82,26 @@ Be clear, encouraging and concise. Explain step by step when helpful.`,
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            className="fixed bottom-24 right-8 w-96 max-h-[600px] h-[70vh] bg-white rounded-3xl shadow-2xl flex flex-col z-50 overflow-hidden border border-gray-100 sans"
+            className="fixed bottom-24 right-8 w-96 max-h-[600px] h-[70vh] bg-panel rounded-3xl shadow-2xl flex flex-col z-50 overflow-hidden border border-edge sans"
           >
-            <div className="bg-jgai-deep p-4 text-white flex justify-between items-center">
+            <div className="bg-panel-2 border-b border-edge p-4 text-white flex justify-between items-center">
               <div className="flex items-center gap-2">
                 <Bot size={20} />
                 <span className="font-semibold tracking-tight">JGAI Tutor</span>
               </div>
-              <button onClick={() => setIsOpen(false)} className="hover:bg-white/20 p-1 rounded-full transition-colors" aria-label="Close">
+              <button onClick={() => setIsOpen(false)} className="hover:bg-panel/20 p-1 rounded-full transition-colors" aria-label="Close">
                 <X size={20} />
               </button>
             </div>
 
-            <div ref={scrollRef} className="flex-grow overflow-y-auto p-4 space-y-4 bg-paper/50">
+            <div ref={scrollRef} className="flex-grow overflow-y-auto p-4 space-y-4 bg-void/50">
               {messages.map((msg, i) => (
                 <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                   <div
                     className={`max-w-[80%] p-3 rounded-2xl text-sm whitespace-pre-wrap ${
                       msg.role === 'user'
                         ? 'bg-jgai text-white rounded-tr-none'
-                        : 'bg-white text-gray-800 shadow-sm border border-gray-100 rounded-tl-none'
+                        : 'bg-panel text-snow shadow-sm border border-edge rounded-tl-none'
                     }`}
                   >
                     {msg.text}
@@ -110,7 +110,7 @@ Be clear, encouraging and concise. Explain step by step when helpful.`,
               ))}
               {isTyping && (
                 <div className="flex justify-start">
-                  <div className="bg-white p-3 rounded-2xl rounded-tl-none shadow-sm border border-gray-100">
+                  <div className="bg-panel p-3 rounded-2xl rounded-tl-none shadow-sm border border-edge">
                     <div className="flex gap-1">
                       <div className="w-1.5 h-1.5 bg-gray-300 rounded-full animate-bounce" />
                       <div className="w-1.5 h-1.5 bg-gray-300 rounded-full animate-bounce [animation-delay:0.2s]" />
@@ -121,7 +121,7 @@ Be clear, encouraging and concise. Explain step by step when helpful.`,
               )}
             </div>
 
-            <div className="p-4 border-t border-gray-100 bg-white">
+            <div className="p-4 border-t border-edge bg-panel">
               <div className="flex gap-2">
                 <input
                   type="text"
@@ -129,7 +129,7 @@ Be clear, encouraging and concise. Explain step by step when helpful.`,
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={(e) => e.key === 'Enter' && handleSend()}
                   placeholder="Ask your JGAI tutor..."
-                  className="flex-grow bg-gray-50 border-none rounded-full px-4 py-2 text-sm focus:ring-2 focus:ring-jgai transition-all outline-none"
+                  className="flex-grow bg-panel-2 border-none rounded-full px-4 py-2 text-sm focus:ring-2 focus:ring-jgai transition-all outline-none"
                 />
                 <button
                   onClick={handleSend}

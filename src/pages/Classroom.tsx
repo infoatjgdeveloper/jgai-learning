@@ -127,12 +127,12 @@ export function Classroom() {
     return (
       <div className="max-w-xl mx-auto sans">
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="card space-y-6 p-8">
-          <div className="w-12 h-12 bg-mint rounded-2xl flex items-center justify-center text-mint-deep">
+          <div className="w-12 h-12 bg-jgai/15 border border-jgai/30 rounded-xl flex items-center justify-center text-jgai-bright">
             <School size={24} />
           </div>
           <div className="space-y-2">
-            <h1 className="text-4xl font-semibold serif">Connect your classroom</h1>
-            <p className="text-gray-500 leading-relaxed">
+            <h1 className="text-4xl font-semibold display">Connect your classroom</h1>
+            <p className="text-fog leading-relaxed">
               Sync your real school courses from Canvas. In Canvas go to Account → Settings → New access token,
               then paste it here with your school's Canvas URL.
             </p>
@@ -142,21 +142,21 @@ export function Classroom() {
               value={baseUrl}
               onChange={(e) => setBaseUrl(e.target.value)}
               placeholder="yourschool.instructure.com"
-              className="w-full border border-[#e3e1da] rounded-2xl px-5 py-3.5 outline-none focus:border-jgai transition-colors bg-white"
+              className="input-dark"
             />
             <input
               value={token}
               onChange={(e) => setToken(e.target.value)}
               type="password"
               placeholder="Canvas access token"
-              className="w-full border border-[#e3e1da] rounded-2xl px-5 py-3.5 outline-none focus:border-jgai transition-colors bg-white"
+              className="input-dark"
             />
             <button onClick={connect} className="olive-button w-full flex items-center justify-center gap-2">
               <Link2 size={16} />
               Connect Canvas
             </button>
           </div>
-          <p className="text-xs text-gray-400">
+          <p className="text-xs text-fog">
             Your token is stored only in your browser and sent directly to your school's Canvas — never saved on our servers.
           </p>
         </motion.div>
@@ -168,10 +168,10 @@ export function Classroom() {
     <div className="space-y-8 sans">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <div className="tag mb-3" style={{ background: 'var(--color-mint)', color: 'var(--color-mint-deep)' }}>
+          <div className="tag mb-3" >
             <School size={13} /> Classroom
           </div>
-          <h1 className="text-5xl font-semibold serif">Your school, synced.</h1>
+          <h1 className="text-5xl font-semibold display">Your school, synced.</h1>
         </div>
         <div className="flex gap-2">
           <button onClick={() => loadCourses(conn)} className="ghost-button flex items-center gap-2 text-sm">
@@ -184,14 +184,14 @@ export function Classroom() {
       </div>
 
       {error && (
-        <div className="flex items-center gap-2 bg-red-50 text-red-600 px-5 py-3 rounded-2xl text-sm">
+        <div className="flex items-center gap-2 bg-red-500/10 border border-red-500/30 text-red-400 px-5 py-3 rounded-2xl text-sm">
           <AlertCircle size={16} /> {error}
         </div>
       )}
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="space-y-3">
-          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold">Courses</p>
+          <p className="text-xs uppercase tracking-widest text-fog font-semibold">Courses</p>
           {courses.map((c) => (
             <button
               key={c.id}
@@ -200,18 +200,18 @@ export function Classroom() {
                 selected?.id === c.id ? '!border-jgai' : ''
               }`}
             >
-              <BookOpen size={18} className="text-jgai shrink-0" />
+              <BookOpen size={18} className="text-jgai-bright shrink-0" />
               <div className="min-w-0">
                 <p className="font-medium truncate">{c.name}</p>
-                <p className="text-xs text-gray-400">{c.course_code}</p>
+                <p className="text-xs text-fog">{c.course_code}</p>
               </div>
             </button>
           ))}
-          {!loading && courses.length === 0 && <p className="text-sm text-gray-400">No active courses found.</p>}
+          {!loading && courses.length === 0 && <p className="text-sm text-fog">No active courses found.</p>}
         </div>
 
         <div className="lg:col-span-2 space-y-3">
-          <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold">
+          <p className="text-xs uppercase tracking-widest text-fog font-semibold">
             {selected ? `Assignments — ${selected.name}` : 'Select a course'}
           </p>
           {selected &&
@@ -222,28 +222,28 @@ export function Classroom() {
                     <a href={a.html_url} target="_blank" rel="noreferrer" className="font-medium hover:text-jgai transition-colors">
                       {a.name}
                     </a>
-                    <p className="text-xs text-gray-400 mt-1">
+                    <p className="text-xs text-fog mt-1">
                       {a.points_possible} pts · {a.due_at ? `Due ${new Date(a.due_at).toLocaleDateString()}` : 'No due date'}
                     </p>
                   </div>
                   <button
                     onClick={() => helpWith(a)}
                     disabled={aiLoading === a.id}
-                    className="flex items-center gap-1.5 text-xs font-semibold text-jgai bg-jgai-soft px-3.5 py-2 rounded-full hover:bg-jgai hover:text-white transition-colors disabled:opacity-50 shrink-0"
+                    className="flex items-center gap-1.5 text-xs font-semibold text-jgai-bright bg-jgai/15 px-3.5 py-2 rounded-full hover:bg-jgai hover:text-white transition-colors disabled:opacity-50 shrink-0"
                   >
                     <Sparkles size={13} />
                     {aiLoading === a.id ? 'Thinking…' : 'AI help'}
                   </button>
                 </div>
                 {aiHelp[a.id] && (
-                  <div className="bg-paper rounded-2xl p-4 text-sm leading-relaxed whitespace-pre-wrap border border-[#edece7]">
+                  <div className="panel p-4 text-sm leading-relaxed whitespace-pre-wrap">
                     {aiHelp[a.id]}
                   </div>
                 )}
               </div>
             ))}
           {selected && !loading && assignments.length === 0 && (
-            <div className="flex items-center gap-2 text-sm text-gray-400">
+            <div className="flex items-center gap-2 text-sm text-fog">
               <CheckCircle2 size={16} /> No assignments in this course.
             </div>
           )}

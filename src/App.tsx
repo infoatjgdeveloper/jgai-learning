@@ -11,6 +11,9 @@ import { CourseView } from './pages/CourseView';
 import { Profile } from './pages/Profile';
 import { Classroom } from './pages/Classroom';
 import { University } from './pages/University';
+import { Pricing } from './pages/Pricing';
+import { Admin } from './pages/Admin';
+import { UniAdmin } from './pages/UniAdmin';
 
 function PrivateRoute({ children }: { children: React.ReactNode }) {
   const { user, loading } = useAuth();
@@ -29,6 +32,23 @@ export default function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/courses" element={<CourseCatalog />} />
               <Route path="/university" element={<University />} />
+              <Route path="/pricing" element={<Pricing />} />
+              <Route
+                path="/admin"
+                element={
+                  <PrivateRoute>
+                    <Admin />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/university-admin"
+                element={
+                  <PrivateRoute>
+                    <UniAdmin />
+                  </PrivateRoute>
+                }
+              />
               <Route
                 path="/classroom"
                 element={

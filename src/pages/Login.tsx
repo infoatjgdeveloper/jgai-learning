@@ -17,21 +17,21 @@ export function Login() {
         animate={{ opacity: 1, scale: 1 }}
         className="card max-w-md w-full text-center space-y-8 py-12"
       >
-        <div className="w-20 h-20 bg-olive-accent rounded-full flex items-center justify-center text-white mx-auto shadow-xl">
+        <div className="w-20 h-20 bg-jgai rounded-full flex items-center justify-center text-white mx-auto shadow-xl">
           <GraduationCap size={40} />
         </div>
         <div className="space-y-2">
           <h2 className="text-4xl font-bold italic">Welcome Back</h2>
-          <p className="text-gray-500">Sign in to continue your learning journey.</p>
+          <p className="text-fog">Sign in to continue your learning journey.</p>
         </div>
         <button
           onClick={login}
-          className="w-full flex items-center justify-center gap-3 bg-white border border-gray-200 py-4 rounded-full text-lg font-bold hover:bg-gray-50 transition-colors shadow-sm"
+          className="w-full flex items-center justify-center gap-3 panel py-4 rounded-full text-lg font-bold hover:bg-panel-2 transition-colors shadow-sm"
         >
           <img src="https://www.google.com/favicon.ico" alt="Google" className="w-6 h-6" referrerPolicy="no-referrer" />
           Continue with Google
         </button>
-        <p className="text-xs text-gray-400 uppercase tracking-widest">
+        <p className="text-xs text-fog uppercase tracking-widest">
           By continuing, you agree to our Terms and Privacy Policy.
         </p>
       </motion.div>

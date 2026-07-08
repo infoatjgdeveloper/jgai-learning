@@ -115,17 +115,17 @@ export function CourseCatalog() {
     <div className="space-y-12">
       <header className="text-center max-w-2xl mx-auto space-y-6">
         <h1 className="text-5xl font-bold italic">Explore Knowledge</h1>
-        <p className="text-gray-500">Discover courses from India's top educators and start your learning journey today.</p>
+        <p className="text-fog">Discover courses from India's top educators and start your learning journey today.</p>
         
         <div className="flex flex-col gap-6 items-center">
           <div className="relative w-full max-w-md">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-fog" size={20} />
             <input
               type="text"
               placeholder="Search courses, subjects, skills..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-12 pr-4 py-4 bg-white border border-gray-100 rounded-full shadow-sm focus:ring-2 focus:ring-olive-accent transition-all outline-none"
+              className="w-full pl-12 pr-4 py-4 bg-panel border border-edge rounded-full shadow-sm focus:ring-2 focus:ring-olive-accent transition-all outline-none"
             />
           </div>
 
@@ -145,8 +145,8 @@ export function CourseCatalog() {
                   }}
                   className={`px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all ${
                     typeFilter === tab.id
-                      ? 'bg-white text-olive-accent shadow-sm'
-                      : 'text-gray-400 hover:text-gray-600'
+                      ? 'bg-panel text-jgai-bright shadow-sm'
+                      : 'text-fog hover:text-fog'
                   }`}
                 >
                   {tab.label}
@@ -170,8 +170,8 @@ export function CourseCatalog() {
                   }}
                   className={`px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all ${
                     levelFilter === tab.id
-                      ? 'bg-white text-olive-accent shadow-sm'
-                      : 'text-gray-400 hover:text-gray-600'
+                      ? 'bg-panel text-jgai-bright shadow-sm'
+                      : 'text-fog hover:text-fog'
                   }`}
                 >
                   {tab.label}
@@ -187,7 +187,7 @@ export function CourseCatalog() {
                   else searchParams.delete('subject');
                   setSearchParams(searchParams);
                 }}
-                className="px-4 py-2 bg-gray-100 rounded-full text-[10px] font-bold uppercase tracking-widest text-gray-600 outline-none focus:ring-2 focus:ring-olive-accent transition-all"
+                className="px-4 py-2 bg-gray-100 rounded-full text-[10px] font-bold uppercase tracking-widest text-fog outline-none focus:ring-2 focus:ring-olive-accent transition-all"
               >
                 <option value="">All Subjects</option>
                 {subjects.map(s => (
@@ -202,11 +202,11 @@ export function CourseCatalog() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {filteredCourses.length === 0 ? (
           <div className="col-span-full py-20 text-center space-y-4">
-            <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto text-gray-400">
+            <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto text-fog">
               <BookOpen size={40} />
             </div>
             <h3 className="text-2xl font-bold italic">No courses found</h3>
-            <p className="text-gray-500 max-w-xs mx-auto">We couldn't find any courses matching your criteria. Try adjusting your search or filters.</p>
+            <p className="text-fog max-w-xs mx-auto">We couldn't find any courses matching your criteria. Try adjusting your search or filters.</p>
             <button 
               onClick={() => {
                 setSearchTerm('');
@@ -215,7 +215,7 @@ export function CourseCatalog() {
                 searchParams.delete('subject');
                 setSearchParams(searchParams);
               }}
-              className="text-olive-accent font-bold uppercase tracking-widest text-xs hover:underline"
+              className="text-jgai-bright font-bold uppercase tracking-widest text-xs hover:underline"
             >
               Clear all filters
             </button>
@@ -245,25 +245,25 @@ export function CourseCatalog() {
                 </div>
                 <div className="p-6 flex-grow space-y-4">
                   <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400 flex items-center gap-1">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-fog flex items-center gap-1">
                       <Tag size={12} /> {course.subject}
                     </span>
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400 flex items-center gap-1">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-fog flex items-center gap-1">
                       <Layers size={12} /> {course.level}
                     </span>
                   </div>
                   <h3 className={`text-2xl font-bold italic leading-tight group-hover:text-${themeColor} transition-colors`}>
                     {course.title}
                   </h3>
-                  <p className="text-sm text-gray-500 line-clamp-3 leading-relaxed">
+                  <p className="text-sm text-fog line-clamp-3 leading-relaxed">
                     {course.description}
                   </p>
                   <div className="flex items-center justify-between pt-4 border-t border-gray-50">
                     <div className="flex items-center gap-2">
-                      <div className={`w-8 h-8 bg-warm-off-white rounded-full flex items-center justify-center text-${themeColor}`}>
+                      <div className={`w-8 h-8 bg-panel-2 rounded-full flex items-center justify-center text-${themeColor}`}>
                         <User size={16} />
                       </div>
-                      <span className="text-xs font-bold uppercase tracking-widest text-gray-400">
+                      <span className="text-xs font-bold uppercase tracking-widest text-fog">
                         {course.term}
                       </span>
                     </div>

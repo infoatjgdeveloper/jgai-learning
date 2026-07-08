@@ -78,25 +78,25 @@ export function Dashboard() {
     <div className="space-y-12">
       <header className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
         <div className="flex items-center gap-4">
-          <div className="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100 overflow-hidden">
+          <div className="w-16 h-16 bg-panel rounded-2xl shadow-sm flex items-center justify-center border border-edge overflow-hidden">
             {university?.logo ? (
               <img src={university.logo} alt={university.name} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
             ) : (
-              <GraduationCap size={32} className="text-olive-accent" />
+              <GraduationCap size={32} className="text-jgai-bright" />
             )}
           </div>
           <div>
             <h1 className="text-4xl font-bold italic leading-tight">{university?.name || 'University Dashboard'}</h1>
-            <p className="text-gray-500 sans font-medium tracking-wide uppercase text-xs">
+            <p className="text-fog sans font-medium tracking-wide uppercase text-xs">
               {profile?.role} Portal &bull; {new Date().toLocaleDateString('en-IN', { month: 'long', year: 'numeric' })}
             </p>
           </div>
         </div>
         <div className="flex gap-3">
-          <button className="p-3 bg-white rounded-full shadow-sm border border-gray-100 text-gray-400 hover:text-olive-accent transition-colors">
+          <button className="p-3 bg-panel rounded-full shadow-sm border border-edge text-fog hover:text-jgai-bright transition-colors">
             <Bell size={20} />
           </button>
-          <button className="p-3 bg-white rounded-full shadow-sm border border-gray-100 text-gray-400 hover:text-olive-accent transition-colors">
+          <button className="p-3 bg-panel rounded-full shadow-sm border border-edge text-fog hover:text-jgai-bright transition-colors">
             <Calendar size={20} />
           </button>
         </div>
@@ -108,13 +108,13 @@ export function Dashboard() {
           {/* Institutional Section */}
           <div className="space-y-8">
             <div className="flex justify-between items-center">
-              <h2 className="text-xl font-bold uppercase tracking-widest text-gray-400">University Courses</h2>
-              <Link to="/courses?type=institutional" className="text-sm font-bold text-olive-accent hover:underline">View Catalog</Link>
+              <h2 className="text-xl font-bold uppercase tracking-widest text-fog">University Courses</h2>
+              <Link to="/courses?type=institutional" className="text-sm font-bold text-jgai-bright hover:underline">View Catalog</Link>
             </div>
             
             {institutionalCourses.length === 0 ? (
-              <div className="card text-center py-12 bg-white/50 border-dashed border-2 border-gray-200">
-                <p className="text-gray-400 italic">No university courses enrolled.</p>
+              <div className="card text-center py-12 bg-panel/50 border-dashed border-2 border-gray-200">
+                <p className="text-fog italic">No university courses enrolled.</p>
               </div>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -122,20 +122,20 @@ export function Dashboard() {
                   <motion.div
                     key={course.id}
                     whileHover={{ y: -4 }}
-                    className="card p-0 overflow-hidden border border-gray-100 flex flex-col"
+                    className="card p-0 overflow-hidden border border-edge flex flex-col"
                   >
-                    <div className="h-3 bg-olive-accent" />
+                    <div className="h-3 bg-jgai" />
                     <div className="p-6 space-y-4 flex-grow">
-                      <div className="flex justify-between text-[10px] font-bold uppercase tracking-widest text-gray-400">
+                      <div className="flex justify-between text-[10px] font-bold uppercase tracking-widest text-fog">
                         <span>{course.courseCode}</span>
                         <span>{course.term}</span>
                       </div>
                       <h3 className="text-2xl font-bold italic leading-tight">{course.title}</h3>
-                      <p className="text-xs text-gray-500 sans">{course.instructorName}</p>
+                      <p className="text-xs text-fog sans">{course.instructorName}</p>
                     </div>
                     <Link 
                       to={`/course/${course.id}`}
-                      className="p-4 bg-gray-50 border-t border-gray-100 text-center text-xs font-bold uppercase tracking-widest hover:bg-olive-accent hover:text-white transition-all"
+                      className="p-4 bg-panel-2 border-t border-edge text-center text-xs font-bold uppercase tracking-widest hover:bg-jgai hover:text-white transition-all"
                     >
                       Enter Course
                     </Link>
@@ -148,13 +148,13 @@ export function Dashboard() {
           {/* Personal Section */}
           <div className="space-y-8">
             <div className="flex justify-between items-center">
-              <h2 className="text-xl font-bold uppercase tracking-widest text-gray-400">Personal Learning</h2>
-              <Link to="/courses?type=personal" className="text-sm font-bold text-olive-accent hover:underline">Explore Skills</Link>
+              <h2 className="text-xl font-bold uppercase tracking-widest text-fog">Personal Learning</h2>
+              <Link to="/courses?type=personal" className="text-sm font-bold text-jgai-bright hover:underline">Explore Skills</Link>
             </div>
             
             {personalCourses.length === 0 ? (
-              <div className="card text-center py-12 bg-white/50 border-dashed border-2 border-gray-200">
-                <p className="text-gray-400 italic">No personal courses enrolled.</p>
+              <div className="card text-center py-12 bg-panel/50 border-dashed border-2 border-gray-200">
+                <p className="text-fog italic">No personal courses enrolled.</p>
               </div>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -162,20 +162,20 @@ export function Dashboard() {
                   <motion.div
                     key={course.id}
                     whileHover={{ y: -4 }}
-                    className="card p-0 overflow-hidden border border-gray-100 flex flex-col"
+                    className="card p-0 overflow-hidden border border-edge flex flex-col"
                   >
                     <div className="h-3 bg-indigo-500" />
                     <div className="p-6 space-y-4 flex-grow">
-                      <div className="flex justify-between text-[10px] font-bold uppercase tracking-widest text-gray-400">
+                      <div className="flex justify-between text-[10px] font-bold uppercase tracking-widest text-fog">
                         <span>Self-Paced</span>
                         <span className="text-indigo-500">{course.price === 0 ? 'FREE' : `₹${course.price}`}</span>
                       </div>
                       <h3 className="text-2xl font-bold italic leading-tight">{course.title}</h3>
-                      <p className="text-xs text-gray-500 sans">{course.instructorName}</p>
+                      <p className="text-xs text-fog sans">{course.instructorName}</p>
                     </div>
                     <Link 
                       to={`/course/${course.id}`}
-                      className="p-4 bg-gray-50 border-t border-gray-100 text-center text-xs font-bold uppercase tracking-widest hover:bg-indigo-500 hover:text-white transition-all"
+                      className="p-4 bg-panel-2 border-t border-edge text-center text-xs font-bold uppercase tracking-widest hover:bg-indigo-500 hover:text-white transition-all"
                     >
                       Continue Learning
                     </Link>
@@ -188,7 +188,7 @@ export function Dashboard() {
 
         {/* Sidebar - To Do / Activity */}
         <div className="space-y-8">
-          <h2 className="text-xl font-bold uppercase tracking-widest text-gray-400">To Do</h2>
+          <h2 className="text-xl font-bold uppercase tracking-widest text-fog">To Do</h2>
           <div className="card space-y-6">
             <div className="flex gap-4 items-start pb-6 border-b border-gray-50">
               <div className="w-10 h-10 bg-red-50 text-red-600 rounded-full flex items-center justify-center flex-shrink-0">
@@ -196,7 +196,7 @@ export function Dashboard() {
               </div>
               <div>
                 <p className="text-sm font-bold">Assignment 1: Foundations</p>
-                <p className="text-xs text-gray-400 mt-1">Due: Mar 28 at 11:59 PM</p>
+                <p className="text-xs text-fog mt-1">Due: Mar 28 at 11:59 PM</p>
                 <p className="text-[10px] uppercase font-bold text-red-500 mt-2">100 points</p>
               </div>
             </div>
@@ -206,14 +206,14 @@ export function Dashboard() {
               </div>
               <div>
                 <p className="text-sm font-bold">New Announcement</p>
-                <p className="text-xs text-gray-400 mt-1">Introduction to Computer Science</p>
+                <p className="text-xs text-fog mt-1">Introduction to Computer Science</p>
                 <p className="text-[10px] uppercase font-bold text-blue-500 mt-2">Read Now</p>
               </div>
             </div>
           </div>
 
-          <h2 className="text-xl font-bold uppercase tracking-widest text-gray-400">Coming Up</h2>
-          <div className="card p-6 bg-olive-accent text-white">
+          <h2 className="text-xl font-bold uppercase tracking-widest text-fog">Coming Up</h2>
+          <div className="card p-6 bg-jgai text-white">
             <p className="text-xs uppercase tracking-widest opacity-60 mb-2">Next Class</p>
             <p className="text-lg font-bold italic">CS101: Lecture 4</p>
             <p className="text-sm mt-4 opacity-80">Monday, 10:00 AM - 11:30 AM</p>
