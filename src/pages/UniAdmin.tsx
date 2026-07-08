@@ -40,7 +40,7 @@ export function UniAdmin() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="panel p-6 space-y-5">
-          <h2 className="font-semibold flex items-center gap-2"><Palette size={17} className="text-jgai-bright" /> Branding & rules</h2>
+          <h2 className="font-semibold flex items-center gap-2"><Palette size={17} className="text-jgai" /> Branding & rules</h2>
           <div className="space-y-4">
             <div>
               <label className="text-[12px] uppercase tracking-widest text-fog">Institution name</label>
@@ -72,18 +72,18 @@ export function UniAdmin() {
         <div className="space-y-6">
           <div className="grid grid-cols-2 gap-4">
             <div className="panel p-5 space-y-2">
-              <div className="flex items-center justify-between text-fog"><span className="text-[12px] uppercase tracking-widest">Students</span><Users size={16} className="text-jgai-bright" /></div>
+              <div className="flex items-center justify-between text-fog"><span className="text-[12px] uppercase tracking-widest">Students</span><Users size={16} className="text-jgai" /></div>
               <p className="text-2xl font-bold display">{courses.reduce((a, c) => a + c.students, 0)}</p>
             </div>
             <div className="panel p-5 space-y-2">
-              <div className="flex items-center justify-between text-fog"><span className="text-[12px] uppercase tracking-widest">Credit price</span><Coins size={16} className="text-jgai-bright" /></div>
+              <div className="flex items-center justify-between text-fog"><span className="text-[12px] uppercase tracking-widest">Credit price</span><Coins size={16} className="text-jgai" /></div>
               <p className="text-2xl font-bold display">{cfg.courseCost}<span className="text-sm text-fog font-normal"> /course</span></p>
             </div>
           </div>
 
           <div className="panel overflow-hidden">
             <div className="px-5 py-3.5 border-b border-edge flex items-center justify-between">
-              <h2 className="font-semibold flex items-center gap-2 text-[15px]"><BookOpen size={16} className="text-jgai-bright" /> Courses</h2>
+              <h2 className="font-semibold flex items-center gap-2 text-[15px]"><BookOpen size={16} className="text-jgai" /> Courses</h2>
             </div>
             {courses.map((c) => (
               <div key={c.id} className="trow flex justify-between items-center px-5 py-3.5 text-[13.5px]">

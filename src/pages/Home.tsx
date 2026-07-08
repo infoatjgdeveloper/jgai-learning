@@ -57,9 +57,9 @@ export function Home() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-edge rounded-2xl overflow-hidden border border-edge">
           {STEPS.map((s) => (
-            <div key={s.n} className="bg-panel p-8 space-y-4 hover:bg-panel-2 transition-colors">
+            <div key={s.n} className="bg-panel p-8 space-y-4 hover:bg-jgai-sky/40 transition-colors">
               <div className="flex items-center justify-between">
-                <div className="w-10 h-10 rounded-lg bg-jgai/15 border border-jgai/30 flex items-center justify-center text-jgai-bright">{s.icon}</div>
+                <div className="w-10 h-10 rounded-lg bg-jgai-sky border border-jgai/30 flex items-center justify-center text-jgai-bright">{s.icon}</div>
                 <span className="text-3xl font-bold text-edge-2 display">{s.n}</span>
               </div>
               <h3 className="text-xl font-semibold">{s.title}</h3>

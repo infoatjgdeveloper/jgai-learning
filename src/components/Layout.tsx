@@ -22,7 +22,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <Link
         to={to}
         className={`flex items-center gap-2 px-3.5 py-2 rounded-lg transition-colors text-[13px] ${
-          active ? 'bg-jgai/15 text-jgai-bright border border-jgai/30' : 'text-fog hover:text-snow border border-transparent'
+          active ? 'bg-jgai-sky text-jgai-bright border border-jgai/30' : 'text-fog hover:text-snow border border-transparent'
         }`}
       >
         {icon}
@@ -33,7 +33,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <header className="bg-void/80 backdrop-blur-xl border-b border-edge py-3 px-6 sticky top-0 z-50">
+      <header className="bg-white/85 backdrop-blur-xl border-b border-edge py-3 px-6 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <Link to="/" className="flex items-center gap-2.5">
             <div className="w-9 h-9 rounded-xl flex items-center justify-center text-white font-bold text-sm display"

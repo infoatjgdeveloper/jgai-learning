@@ -127,7 +127,7 @@ export function Classroom() {
     return (
       <div className="max-w-xl mx-auto sans">
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="card space-y-6 p-8">
-          <div className="w-12 h-12 bg-jgai/15 border border-jgai/30 rounded-xl flex items-center justify-center text-jgai-bright">
+          <div className="w-12 h-12 bg-jgai-sky border border-jgai/30 rounded-xl flex items-center justify-center text-jgai-bright">
             <School size={24} />
           </div>
           <div className="space-y-2">
@@ -184,7 +184,7 @@ export function Classroom() {
       </div>
 
       {error && (
-        <div className="flex items-center gap-2 bg-red-500/10 border border-red-500/30 text-red-400 px-5 py-3 rounded-2xl text-sm">
+        <div className="flex items-center gap-2 bg-red-50 border border-red-200 text-red-600 px-5 py-3 rounded-2xl text-sm">
           <AlertCircle size={16} /> {error}
         </div>
       )}
@@ -229,7 +229,7 @@ export function Classroom() {
                   <button
                     onClick={() => helpWith(a)}
                     disabled={aiLoading === a.id}
-                    className="flex items-center gap-1.5 text-xs font-semibold text-jgai-bright bg-jgai/15 px-3.5 py-2 rounded-full hover:bg-jgai hover:text-white transition-colors disabled:opacity-50 shrink-0"
+                    className="flex items-center gap-1.5 text-xs font-semibold text-jgai bg-jgai-sky px-3.5 py-2 rounded-full hover:bg-jgai hover:text-white transition-colors disabled:opacity-50 shrink-0"
                   >
                     <Sparkles size={13} />
                     {aiLoading === a.id ? 'Thinking…' : 'AI help'}

@@ -13,9 +13,9 @@ const SEED: Tenant[] = [
 ];
 
 const STATUS_STYLE: Record<Tenant['status'], string> = {
-  active: 'text-emerald-400 bg-emerald-400/10 border-emerald-400/30',
-  onboarding: 'text-sky-400 bg-sky-400/10 border-sky-400/30',
-  'churn-risk': 'text-amber-400 bg-amber-400/10 border-amber-400/30'
+  active: 'text-emerald-700 bg-emerald-50 border-emerald-300',
+  onboarding: 'text-sky-700 bg-sky-50 border-sky-300',
+  'churn-risk': 'text-amber-700 bg-amber-50 border-amber-300'
 };
 
 export function Admin() {
@@ -55,7 +55,7 @@ export function Admin() {
           { label: 'MRR', value: `$${totals.mrr.toLocaleString()}`, icon: <TrendingUp size={17} /> }
         ].map((s) => (
           <div key={s.label} className="panel p-5 space-y-2">
-            <div className="flex items-center justify-between text-fog"><span className="text-[12px] uppercase tracking-widest">{s.label}</span><span className="text-jgai-bright">{s.icon}</span></div>
+            <div className="flex items-center justify-between text-fog"><span className="text-[12px] uppercase tracking-widest">{s.label}</span><span className="text-jgai">{s.icon}</span></div>
             <p className="text-2xl font-bold display">{s.value}</p>
           </div>
         ))}
@@ -89,7 +89,7 @@ export function Admin() {
             </thead>
             <tbody>
               {filtered.map((t) => (
-                <tr key={t.id} className="trow hover:bg-panel-2 transition-colors">
+                <tr key={t.id} className="trow hover:bg-jgai-sky/40 transition-colors">
                   <td className="px-5 py-3.5 font-semibold">{t.name}</td>
                   <td className="px-5 py-3.5 text-fog">{t.plan}</td>
                   <td className="px-5 py-3.5 text-fog">{t.students.toLocaleString()}</td>
