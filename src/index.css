@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Fraunces", serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --color-warm-off-white: #faf9f6;
+  --color-paper: #faf9f6;
+  --color-ink: #16151a;
+  --color-olive-accent: #4f46b8;
+  --color-jgai: #4f46b8;
+  --color-jgai-soft: #eeedfe;
+  --color-jgai-deep: #26215c;
+  --color-mint: #e1f5ee;
+  --color-mint-deep: #0f6e56;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@100..900&display=swap');
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .display {
+  font-family: var(--font-serif);
+  letter-spacing: -0.01em;
+}
+
+.sans { font-family: var(--font-sans); }
+.serif { font-family: var(--font-serif); }
+
+.olive-button {
+  background-color: var(--color-jgai);
+  color: white;
+  border-radius: 9999px;
+  padding: 12px 24px;
+  letter-spacing: 0.3px;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  transition: background-color 0.2s, transform 0.15s;
+}
+.olive-button:hover { background-color: var(--color-jgai-deep); }
+.olive-button:active { transform: scale(0.98); }
+
+.ghost-button {
+  border: 1px solid #e3e1da;
+  border-radius: 9999px;
+  padding: 12px 24px;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+.ghost-button:hover { border-color: var(--color-jgai); background: white; }
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #edece7;
+  border-radius: 20px;
+  padding: 24px;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+.card:hover { box-shadow: 0 12px 32px rgba(22, 21, 26, 0.06); }
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background: var(--color-jgai-soft);
+  color: var(--color-jgai-deep);
+}
+
+.pill-image {
+  border-radius: 9999px;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+}
+
+.markdown-body { font-family: var(--font-sans); }
+.markdown-body h1 { @apply text-3xl font-bold mb-4; }
+.markdown-body h2 { @apply text-2xl font-bold mb-3 mt-6; }
+.markdown-body h3 { @apply text-xl font-bold mb-2 mt-4; }
+.markdown-body p { @apply mb-4 leading-relaxed; }
+.markdown-body ul { @apply list-disc pl-6 mb-4; }
+.markdown-body ol { @apply list-decimal pl-6 mb-4; }
+.markdown-body code { @apply bg-gray-100 px-1.5 py-0.5 rounded text-sm; }

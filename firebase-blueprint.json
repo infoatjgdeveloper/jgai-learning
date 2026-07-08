@@ -1,0 +1,105 @@
+{
+  "entities": {
+    "University": {
+      "title": "University",
+      "description": "Top-level institutional entity.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "code": { "type": "string", "description": "Unique institutional code" },
+        "logo": { "type": "string", "format": "uri" },
+        "adminId": { "type": "string" }
+      },
+      "required": ["name", "code"]
+    },
+    "User": {
+      "title": "User Profile",
+      "description": "Stores user information and roles within an institution.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "displayName": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "photoURL": { "type": "string", "format": "uri" },
+        "role": { "type": "string", "enum": ["student", "instructor", "admin"] },
+        "universityId": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "bio": { "type": "string" },
+        "skills": { "type": "array", "items": { "type": "string" } },
+        "interests": { "type": "array", "items": { "type": "string" } }
+      },
+      "required": ["uid", "email", "role", "universityId"]
+    },
+    "Course": {
+      "title": "Course",
+      "description": "Academic course within a university.",
+      "type": "object",
+      "properties": {
+        "universityId": { "type": "string" },
+        "courseCode": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "instructorId": { "type": "string" },
+        "instructorName": { "type": "string" },
+        "term": { "type": "string", "description": "e.g., Fall 2026" },
+        "isPublished": { "type": "boolean" },
+        "type": { "type": "string", "enum": ["institutional", "personal"] },
+        "price": { "type": "number", "description": "Price for personal courses (0 for free)" },
+        "thumbnail": { "type": "string", "format": "uri" },
+        "level": { "type": "string", "enum": ["Beginner", "Intermediate", "Advanced"] },
+        "subject": { "type": "string" }
+      },
+      "required": ["universityId", "courseCode", "title", "instructorId", "type", "level", "subject"]
+    },
+    "Assignment": {
+      "title": "Assignment",
+      "description": "Course assignments with deadlines.",
+      "type": "object",
+      "properties": {
+        "courseId": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "points": { "type": "number" },
+        "dueDate": { "type": "string", "format": "date-time" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["courseId", "title", "points", "dueDate"]
+    },
+    "Submission": {
+      "title": "Submission",
+      "description": "Student assignment submissions.",
+      "type": "object",
+      "properties": {
+        "assignmentId": { "type": "string" },
+        "studentId": { "type": "string" },
+        "content": { "type": "string" },
+        "grade": { "type": "number" },
+        "feedback": { "type": "string" },
+        "submittedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["assignmentId", "studentId", "submittedAt"]
+    },
+    "Announcement": {
+      "title": "Announcement",
+      "description": "Course-wide announcements.",
+      "type": "object",
+      "properties": {
+        "courseId": { "type": "string" },
+        "title": { "type": "string" },
+        "content": { "type": "string" },
+        "authorId": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["courseId", "title", "content", "authorId"]
+    }
+  },
+  "firestore": {
+    "/universities/{universityId}": { "schema": "University", "description": "Institutions" },
+    "/users/{userId}": { "schema": "User", "description": "User profiles" },
+    "/courses/{courseId}": { "schema": "Course", "description": "Academic courses" },
+    "/courses/{courseId}/assignments/{assignmentId}": { "schema": "Assignment", "description": "Course assignments" },
+    "/submissions/{submissionId}": { "schema": "Submission", "description": "Student work" },
+    "/courses/{courseId}/announcements/{announcementId}": { "schema": "Announcement", "description": "Course updates" },
+    "/enrollments/{enrollmentId}": { "schema": "Enrollment", "description": "Course rosters" }
+  }
+}
