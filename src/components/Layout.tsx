@@ -53,6 +53,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <>
                 {navLink('/classroom', <School size={15} />, 'Classroom')}
                 {navLink('/dashboard', <LayoutDashboard size={15} />, 'Dashboard')}
+                {navLink('/transcript', <CreditCard size={15} />, 'Transcript')}
                 {profile.role !== 'student' && navLink('/university-admin', <Building2 size={15} />, 'Institution')}
                 {isSuperAdmin && navLink('/admin', <ShieldCheck size={15} />, 'JGAI Admin')}
                 {navLink('/profile', <User size={15} />, 'Profile')}

@@ -13,6 +13,8 @@ import { Classroom } from './pages/Classroom';
 import { University } from './pages/University';
 import { Pricing } from './pages/Pricing';
 import { Catalog } from './pages/Catalog';
+import { Transcript } from './pages/Transcript';
+import { Verify } from './pages/Verify';
 import { Admin } from './pages/Admin';
 import { UniAdmin } from './pages/UniAdmin';
 
@@ -35,6 +37,8 @@ export default function App() {
               <Route path="/university" element={<University />} />
               <Route path="/pricing" element={<Pricing />} />
               <Route path="/catalog" element={<Catalog />} />
+              <Route path="/transcript" element={<Transcript />} />
+              <Route path="/verify" element={<Verify />} />
               <Route
                 path="/admin"
                 element={
