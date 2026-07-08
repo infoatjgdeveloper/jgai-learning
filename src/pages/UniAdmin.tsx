@@ -35,7 +35,7 @@ export function UniAdmin() {
       <div>
         <div className="tag mb-3"><Building2 size={13} /> Institution admin</div>
         <h1 className="text-4xl font-bold">{cfg.name}</h1>
-        <p className="text-fog mt-1 text-sm">Customize your JGAI instance — branding, credit pricing and courses.</p>
+        <p className="text-fog mt-1 text-sm">Customize your JGAI instance. branding, credit pricing and courses.</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">

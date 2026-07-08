@@ -17,14 +17,14 @@ export function Transcript() {
   const totalCH = earned.reduce((a, p) => a + p.creditHours, 0);
   const inProgressCH = programs.reduce((a, p) => a + p.creditHours, 0) - totalCH;
   const gpas = programs.map((p) => programGPA(p).gpa).filter((g): g is number => g !== null);
-  const gpa = gpas.length ? (gpas.reduce((a, b) => a + b, 0) / gpas.length).toFixed(2) : '—';
+  const gpa = gpas.length ? (gpas.reduce((a, b) => a + b, 0) / gpas.length).toFixed(2) : ', ';
 
   return (
     <div className="max-w-3xl mx-auto space-y-8">
       <div className="text-center space-y-3 pt-4">
         <div className="tag mx-auto"><ScrollText size={13} /> Official transcript</div>
         <h1 className="text-4xl font-bold">{profile?.displayName || 'JGAI Student'}</h1>
-        <p className="text-fog text-sm">JGAI University · Student record{user ? '' : ' (local — sign in to save permanently)'}</p>
+        <p className="text-fog text-sm">JGAI University · Student record{user ? '' : ' (local: sign in to save permanently)'}</p>
       </div>
 
       <div className="grid grid-cols-3 gap-4">

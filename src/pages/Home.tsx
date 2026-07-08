@@ -9,20 +9,20 @@ const CALENDAR = [
   ['Aug 24', 'Fall term begins · first lectures released'],
   ['Sep 7', 'Last day to register without late fee'],
   ['Oct 12–16', 'Midterm examination window'],
-  ['Nov 25–27', 'Reading days — no new coursework'],
+  ['Nov 25–27', 'Reading days, no new coursework'],
   ['Dec 14–18', 'Final examinations'],
   ['Dec 21', 'Grades posted · certificates issued']
 ];
 
 const NEWS = [
-  { tag: 'Admissions', title: 'Fall 2026 registration is open — every program, every schedule', date: 'This week' },
+  { tag: 'Admissions', title: 'Fall 2026 registration is open for every program, every schedule', date: 'This week' },
   { tag: 'Academics', title: 'New: AI faculty now deliver personalized quizzes with instant grading', date: 'This month' },
   { tag: 'Institutions', title: 'JGAI campus licensing brings the AI University to partner colleges', date: 'This month' }
 ];
 
 const ADMISSION_STEPS = [
   ['Apply', 'Tell the registrar what you want to study, your goal, schedule and learning style. Takes 2 minutes.'],
-  ['Register', 'The AI registrar designs your personalized program and charges tuition per credit hour — 25 credits each.'],
+  ['Register', 'The AI registrar designs your personalized program and charges tuition per credit hour. 25 credits each.'],
   ['Attend', 'Weekly lectures on your chosen days, homework, and graded quizzes from your AI professors.'],
   ['Graduate', 'Earn every week, pass your exams, and receive a verifiable JGAI certificate and transcript.']
 ];
@@ -39,7 +39,7 @@ export function Home() {
             <p className="text-[11px] uppercase tracking-[0.3em] text-white/60">Office of Admissions · Fall 2026</p>
             <h1 className="text-5xl md:text-6xl font-bold leading-[1.05]">A real university.<br /><span style={{ color: '#b89235' }}>Taught entirely by AI.</span></h1>
             <p className="text-white/80 text-lg leading-relaxed max-w-xl">
-              Credit hours, tuition, registration, lectures, examinations, transcripts and certificates —
+              Credit hours, tuition, registration, lectures, examinations, transcripts and certificates.
               the full university system, personalized to your schedule by AI faculty. Plus real Canvas sync
               with your current school.
             </p>
@@ -165,7 +165,7 @@ export function Home() {
           <p className="text-[11px] uppercase tracking-[0.25em] text-fog">Office of Institutional Partnerships</p>
           <h2 className="text-3xl font-bold">Bring JGAI to your campus.</h2>
           <p className="text-fog leading-relaxed text-[15px]">
-            Partner colleges license the JGAI system as their own digital campus — their branding, their
+            Partner colleges license the JGAI system as their own digital campus: their branding, their
             tuition rates, their academic policies, with AI faculty and registrar infrastructure underneath.
           </p>
           <div className="flex gap-3">

@@ -1,20 +1,20 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './AuthContext';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { Layout } from './components/Layout';
 import { Home } from './pages/Home';
 import { Login } from './pages/Login';
-import { Dashboard } from './pages/Dashboard';
-import { CourseCatalog } from './pages/CourseCatalog';
-import { CourseView } from './pages/CourseView';
-import { Profile } from './pages/Profile';
-import { Classroom } from './pages/Classroom';
-import { University } from './pages/University';
-import { Pricing } from './pages/Pricing';
-import { Catalog } from './pages/Catalog';
-import { Transcript } from './pages/Transcript';
-import { Verify } from './pages/Verify';
+const Dashboard = React.lazy(() => import('./pages/Dashboard').then(m => ({ default: m.Dashboard })));
+const CourseCatalog = React.lazy(() => import('./pages/CourseCatalog').then(m => ({ default: m.CourseCatalog })));
+const CourseView = React.lazy(() => import('./pages/CourseView').then(m => ({ default: m.CourseView })));
+const Profile = React.lazy(() => import('./pages/Profile').then(m => ({ default: m.Profile })));
+const Classroom = React.lazy(() => import('./pages/Classroom').then(m => ({ default: m.Classroom })));
+const University = React.lazy(() => import('./pages/University').then(m => ({ default: m.University })));
+const Pricing = React.lazy(() => import('./pages/Pricing').then(m => ({ default: m.Pricing })));
+const Catalog = React.lazy(() => import('./pages/Catalog').then(m => ({ default: m.Catalog })));
+const Transcript = React.lazy(() => import('./pages/Transcript').then(m => ({ default: m.Transcript })));
+const Verify = React.lazy(() => import('./pages/Verify').then(m => ({ default: m.Verify })));
 import { Admin } from './pages/Admin';
 import { UniAdmin } from './pages/UniAdmin';
 
@@ -30,6 +30,7 @@ export default function App() {
       <AuthProvider>
         <Router>
           <Layout>
+            <Suspense fallback={<div className="flex justify-center py-24 text-fog text-sm">Loading…</div>}>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
@@ -88,6 +89,7 @@ export default function App() {
                 } 
               />
             </Routes>
+            </Suspense>
           </Layout>
         </Router>
       </AuthProvider>

@@ -28,7 +28,7 @@ export function Pricing() {
         <p className="text-fog max-w-2xl mx-auto leading-relaxed">
           JGAI works like a real university. Every program is measured in academic credit hours
           (1 credit hour ≈ 15 hours of instruction, the Carnegie standard). Tuition is simple:
-          <span className="font-bold text-snow"> {RATE} JGAI credits per credit hour</span> — no subscriptions, no seat time you don't use.
+          <span className="font-bold text-snow"> {RATE} JGAI credits per credit hour</span>. No subscriptions, no seat time you don't use.
         </p>
       </div>
 
@@ -80,7 +80,7 @@ export function Pricing() {
       <div className="panel p-10 text-center space-y-4 max-w-3xl mx-auto grid-bg">
         <Coins size={24} className="text-jgai mx-auto" />
         <h2 className="text-2xl font-bold">New students get 300 welcome credits</h2>
-        <p className="text-fog text-sm">That's 12 credit hours — a full course, on us. No card required.</p>
+        <p className="text-fog text-sm">That's 12 credit hours: a full course, on us. No card required.</p>
         <Link to="/login" className="olive-button text-sm inline-block">Start enrollment</Link>
       </div>
     </div>

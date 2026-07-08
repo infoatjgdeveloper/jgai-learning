@@ -107,7 +107,7 @@ export function Classroom() {
     try {
       const text = await askClaude({
         system:
-          'You are the JGAI study assistant inside a student classroom. Help the student understand the assignment and plan how to complete it. Give: 1) a plain-language summary of what is being asked, 2) a step-by-step plan, 3) key concepts to review. Be concise. Never do the work for them in a way that violates academic integrity — guide them.',
+          'You are the JGAI study assistant inside a student classroom. Help the student understand the assignment and plan how to complete it. Give: 1) a plain-language summary of what is being asked, 2) a step-by-step plan, 3) key concepts to review. Be concise. Never do the work for them in a way that violates academic integrity. guide them.',
         messages: [
           {
             role: 'user',
@@ -157,7 +157,7 @@ export function Classroom() {
             </button>
           </div>
           <p className="text-xs text-fog">
-            Your token is stored only in your browser and sent directly to your school's Canvas — never saved on our servers.
+            Your token is stored only in your browser and sent directly to your school's Canvas. never saved on our servers.
           </p>
         </motion.div>
       </div>
@@ -212,7 +212,7 @@ export function Classroom() {
 
         <div className="lg:col-span-2 space-y-3">
           <p className="text-xs uppercase tracking-widest text-fog font-semibold">
-            {selected ? `Assignments — ${selected.name}` : 'Select a course'}
+            {selected ? `Assignments. ${selected.name}` : 'Select a course'}
           </p>
           {selected &&
             assignments.map((a) => (

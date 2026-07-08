@@ -127,7 +127,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-[13px]">
           <div className="col-span-2 space-y-3">
             <div className="flex items-center gap-3"><Crest /><p className="font-bold display text-lg">JGAI University</p></div>
-            <p className="text-white/60 leading-relaxed max-w-xs">The AI University — personalized, credit-hour education taught, graded and certified by AI faculty. A JGAI institution.</p>
+            <p className="text-white/60 leading-relaxed max-w-xs">The AI University: personalized, credit-hour education taught, graded and certified by AI faculty. A JGAI institution.</p>
           </div>
           <div className="space-y-2">
             <p className="font-bold uppercase tracking-widest text-[11px] text-white/50">Academics</p>

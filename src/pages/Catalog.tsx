@@ -72,7 +72,7 @@ export function Catalog() {
       </div>
       {filtered.length === 0 && (
         <div className="text-center py-16 space-y-3">
-          <p className="text-fog">No catalog match for "{query}" — but JGAI can teach it anyway.</p>
+          <p className="text-fog">No catalog match for "{query}", but JGAI can teach it anyway.</p>
           <button onClick={() => navigate(`/university?topic=${encodeURIComponent(query)}`)} className="olive-button text-sm">Create "{query}" program</button>
         </div>
       )}

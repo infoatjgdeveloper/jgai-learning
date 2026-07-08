@@ -82,7 +82,7 @@ Return JSON: { "name": string, "tagline": string, "durationWeeks": number, "cred
       setActive(program); setPhase('program');
     } catch (e) {
       console.error(e);
-      setError('Program generation failed — AI may not be configured yet. Try again shortly.');
+      setError('Program generation failed. AI may not be configured yet. Try again shortly.');
       setPhase('intake');
     }
   };
@@ -96,7 +96,7 @@ Return JSON: { "name": string, "tagline": string, "durationWeeks": number, "cred
         maxTokens: 3000
       });
       setLecture(text);
-    } catch { setLecture('Lecture unavailable right now — try again shortly.'); }
+    } catch { setLecture('Lecture unavailable right now. Try again shortly.'); }
     finally { setLectureLoading(false); }
   };
 
@@ -110,7 +110,7 @@ Return JSON: { "questions": [{ "q": string, "options": [4 strings], "answer": nu
         maxTokens: 2500
       });
       setQuiz(data.questions);
-    } catch { setError('Quiz generation failed — try again.'); setQuizWeek(null); }
+    } catch { setError('Quiz generation failed. Try again.'); setQuizWeek(null); }
     finally { setQuizLoading(false); }
   };
 
@@ -138,7 +138,7 @@ Return JSON: { "questions": [{ "q": string, "options": [4 strings], "answer": nu
       { title: 'What do you want to study?', valid: intake.topic.trim().length > 1, body: (
         <div className="space-y-4">
           <input value={intake.topic} onChange={(e) => setIntake({ ...intake, topic: e.target.value })} placeholder="e.g. MBA, Machine Learning, UX Design" className="input-dark text-lg" autoFocus />
-          <textarea value={intake.goal} onChange={(e) => setIntake({ ...intake, goal: e.target.value })} placeholder="Your goal — e.g. 'switch careers into product management within a year'" className="input-dark min-h-[90px]" />
+          <textarea value={intake.goal} onChange={(e) => setIntake({ ...intake, goal: e.target.value })} placeholder="Your goal, e.g. 'switch careers into product management within a year'" className="input-dark min-h-[90px]" />
         </div>) },
       { title: 'Your weekly schedule', valid: intake.days.length > 0, body: (
         <div className="space-y-6">
@@ -167,7 +167,7 @@ Return JSON: { "questions": [{ "q": string, "options": [4 strings], "answer": nu
         <div className="panel p-8 md:p-10 space-y-8">
           <div className="space-y-2">
             <div className="flex items-center justify-between">
-              <div className="tag"><Target size={12} /> Enrollment — step {step + 1} of 3</div>
+              <div className="tag"><Target size={12} /> Enrollment: step {step + 1} of 3</div>
               <span className="text-[12px] text-fog flex items-center gap-1"><Coins size={13} /> {credits} cr</span>
             </div>
             <div className="h-1.5 bg-panel-2 rounded-full overflow-hidden"><div className="h-full rounded-full transition-all" style={{ width: `${((step + 1) / 3) * 100}%`, background: 'linear-gradient(90deg,#2b6cff,#8b5cf6)' }} /></div>
@@ -285,7 +285,7 @@ Return JSON: { "questions": [{ "q": string, "options": [4 strings], "answer": nu
                     <button disabled={Object.keys(quizAnswers).length < quiz.length} onClick={() => submitQuiz(active)} className="olive-button text-sm w-full disabled:opacity-50">Submit quiz</button>
                   ) : (
                     <div className={`rounded-xl p-4 text-center font-bold ${quizResult >= 60 ? 'bg-green-50 text-green-700 border border-green-300' : 'bg-red-50 text-red-600 border border-red-300'}`}>
-                      Score: {quizResult}% — {quizResult >= 60 ? 'Passed! Week earned.' : 'Below 60%. Review the lecture and retake.'}
+                      Score: {quizResult}%. {quizResult >= 60 ? 'Passed! Week earned.' : 'Below 60%. Review the lecture and retake.'}
                     </div>
                   )}
                 </div>
