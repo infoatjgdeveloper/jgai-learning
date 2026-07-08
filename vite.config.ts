@@ -8,6 +8,7 @@ export default defineConfig(({mode}) => {
   return {
     plugins: [react(), tailwindcss()],
     build: {
+      emptyOutDir: false,
       rollupOptions: {
         output: {
           manualChunks: {
